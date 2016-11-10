@@ -1,0 +1,13 @@
+<h1>Angular 2 - Form Group</h1>
+
+<form [formGroup]="personForm">
+    <label>First name:</label>
+    <input type="text" formControlName="firstName" />
+    <br />
+    <label>Last name:</label>
+    <input type="text" formControlName="lastName" />
+    <br />
+    <button type="button" (click)="onSave()">Save</button>
+</form>
+<br />
+<strong *ngIf="first != null">Hello {{first}} {{last}}</strong>
