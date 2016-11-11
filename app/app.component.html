@@ -1,13 +1,38 @@
 <h1>Angular 2 - Form Group</h1>
 
 <form [formGroup]="personForm">
-    <label>First name:</label>
-    <input type="text" formControlName="firstName" />
-    <br />
-    <label>Last name:</label>
-    <input type="text" formControlName="lastName" />
-    <br />
-    <button type="button" (click)="onSave()">Save</button>
+    <p>
+        <label>First name:</label>
+        <input type="text" name="firstName" formControlName="firstName" />
+    </p>
+    <p>
+        <label>Last name:</label>
+        <input type="text" name="lastName" formControlName="lastName" />
+    </p>
+    <button type="button" (click)="onSavePerson()">Save</button>
 </form>
-<br />
 <strong *ngIf="first != null">Hello {{first}} {{last}}</strong>
+<hr />
+<br />
+<form [formGroup]="organizationForm">
+    <p>
+        <label>Organization Name:</label>
+        <input type="text" formControlName="name" />
+        <span *ngIf="organizationForm.controls.name.errors"> *This field is required!</span>
+    </p>
+    <p>
+        <label>Legal name:</label>
+        <input type="text" formControlName="legalName" />
+    </p>
+    <button type="button" (click)="onSaveOrganization()" [disabled]="organizationForm.controls.name.errors">Save</button>
+</form>
+<strong *ngIf="name != null ">Organization Name: {{name}}, Legal Name: {{legalName}}</strong>
+<hr />
+<br />
+<form [formGroup]="searchForm">
+<p>
+    <label>Search:</label>
+    <input type="text" formControlName="search" />
+</p>
+</form>
+<strong>{{search}}</strong>

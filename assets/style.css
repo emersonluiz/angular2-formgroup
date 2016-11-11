@@ -1,0 +1,16 @@
+label {
+    width: 160px;
+    float: left;
+}
+
+input + span {
+    color: red;
+}
+
+button {
+    margin-bottom: 15px;
+}
+
+hr {
+    margin-top: 15px;
+}
